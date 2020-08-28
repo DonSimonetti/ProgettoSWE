@@ -1,5 +1,11 @@
 package main.java.parties;
 
+/*
+*
+*   User class represents actual registered users
+*
+* */
+
 public class User extends Party
 {
     String name;
