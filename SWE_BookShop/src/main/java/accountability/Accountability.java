@@ -16,9 +16,9 @@ public class Accountability
 
     public Accountability(Party primary, AccountabilityType type, Party secondary, TimeRecord timeRecord)
     {
-        this.primary=primary;
-        this.type=type;
-        this.secondary=secondary;
-        this.timeRecord=timeRecord;
+        this.primary=new Party(primary.getType().getType());
+        this.type=new AccountabilityType(type.getType());
+        this.secondary=new Party(secondary.getType().getType());
+        this.timeRecord=new TimeRecord(timeRecord.getStartTime(),timeRecord.getEndTime());
     }
 }

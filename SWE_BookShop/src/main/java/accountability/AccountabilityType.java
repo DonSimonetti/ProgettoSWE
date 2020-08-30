@@ -18,4 +18,9 @@ public class AccountabilityType
     {
         this.type=type;
     }
+
+    public eAccountabilityTypes getType()
+    {
+        return this.type;
+    }
 }
