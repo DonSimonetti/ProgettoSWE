@@ -9,6 +9,8 @@ public final class PartyType
         COMMENT,
         BOOK,
         USER,
+        PUBLISHER,
+        AUTHOR,
         GROUP,
         BOOK_LIST
     }

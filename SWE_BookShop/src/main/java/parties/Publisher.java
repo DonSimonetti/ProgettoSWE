@@ -12,6 +12,7 @@ public class Publisher extends Party
 
     public Publisher(String name)
     {
+        super(PartyType.ePartyTypes.PUBLISHER);
         this.name=name;
     }
 

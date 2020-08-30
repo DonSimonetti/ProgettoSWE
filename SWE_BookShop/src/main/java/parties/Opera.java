@@ -6,6 +6,8 @@ package main.java.parties;
  *
  * */
 
+import java.util.List;
+
 public class Opera extends Party
 {
     private String title;
@@ -32,12 +34,13 @@ public class Opera extends Party
     }
 
 
-    public addTag(String tag)
+    public void addTag(String tag)
     {
         tags.add(tag);
     }
-    public addTag(List<String> tag)
+    
+    public void addTag(List<String> tag)
     {
-        tags.addAll(tag)
+        tags.addAll(tag);
     }
 }

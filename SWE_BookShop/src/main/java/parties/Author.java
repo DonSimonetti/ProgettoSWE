@@ -12,8 +12,7 @@ public class Author extends Party
 
     public Author(String name)
     {
-        /* need of an ePartyTypes AUTHOR?
-        super(PartyType.ePartyTypes.AUTHOR); */
+        super(PartyType.ePartyTypes.AUTHOR);
         this.name=name;
     }
 
