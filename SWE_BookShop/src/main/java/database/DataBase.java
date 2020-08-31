@@ -8,7 +8,7 @@ import java.util.List;
 
 /*
 *
-* DataBase is a Singleton-class that stores and manage all the accountabilities
+* DataBase is a Singleton-class that stores and manages all the accountabilities
 *
 * */
 
