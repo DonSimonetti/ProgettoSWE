@@ -8,8 +8,8 @@ public class ExampleTest
     @Test
     void bTest()
     {
-        int iTest=5;
-        Assertions.assertEquals(iTest,5);
+        boolean iTest=true;
+        Assertions.assertTrue(iTest);
     }
 
     @Test
