@@ -10,8 +10,9 @@ public final class PartyType
         BOOK,
         USER,
         PUBLISHER,
-        AUTHOR,
+        MODERATOR,
         GROUP,
+        AUTHOR,
         BOOK_LIST
     }
 

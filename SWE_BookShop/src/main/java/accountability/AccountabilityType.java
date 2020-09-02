@@ -8,7 +8,7 @@ public class AccountabilityType
         JOINS,
         EDITION,
         COMMENTS,
-        WRITTEN_BY,
+        AUTHOR_OF,
         ASSOCIATED_WITH
     }
 
