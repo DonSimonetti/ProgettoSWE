@@ -4,8 +4,8 @@ import java.sql.Time;
 
 public class TimeRecord
 {
-    private Time startTime;
-    private Time endTime;
+    private Time startTime=null;
+    private Time endTime=null;
 
     public TimeRecord(Time startTime, Time endTime)
     {
