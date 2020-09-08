@@ -40,14 +40,14 @@ public class DataBase //TODO implement methods
 
         switch (userType)
         {
-            case PUBLISHER -> {//PUBLISHER or someone else who have writing permissions TODO
+            case PUBLISHER: {//PUBLISHER or someone else who have writing permissions TODO
 
                 Opera opera=new Opera(title,yearFirstPublication);
                 Author author=new Author(authorName);
 
                 createAndRegisterAccountability(author, new AccountabilityType(AccountabilityType.eAccountabilityTypes.AUTHOR_OF), opera,null);
             }
-            default -> throw new Exception("'userType' is invalid or doesn't have sufficient permission");
+            default: throw new Exception("'userType' is invalid or doesn't have sufficient permission");
         }
     }
 
@@ -67,7 +67,7 @@ public class DataBase //TODO implement methods
 
         switch (user.getType().getType())
         {
-            case PUBLISHER -> _comment.setVisible();
+            case PUBLISHER: _comment.setVisible();
         }
     }
 
@@ -144,7 +144,7 @@ public class DataBase //TODO implement methods
         {
             if(a.getType()==type)
             {
-                if(timeRecord.getStartTime() <= a.getTimeRecord().getStartTime() && a.getTimeRecord().getStartTime() <= timeRecord.getEndTime())
+                if(timeRecord.getStartTime().getTime() <= a.getTimeRecord().getStartTime().getTime() && a.getTimeRecord().getStartTime().getTime() <= timeRecord.getEndTime().getTime())
                 {
                     accountabilityVector.add(a);
                 }
