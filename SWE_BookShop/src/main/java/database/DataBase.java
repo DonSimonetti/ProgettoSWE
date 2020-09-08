@@ -15,7 +15,7 @@ import java.util.Vector;
 *
 * */
 
-public class DataBase //TODO implement methods
+public final class DataBase //TODO implement methods
 {
     private static DataBase instance=null;
 
