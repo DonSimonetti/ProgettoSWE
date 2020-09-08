@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" timestamp="2020-09-08T10:08:14" xmlns:UML="http://schema.omg.org/spec/UML/1.4" xmi.version="1.2">
+<XMI verified="false" timestamp="2020-09-08T10:23:24" xmlns:UML="http://schema.omg.org/spec/UML/1.4" xmi.version="1.2">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -369,7 +369,7 @@
           <UML:Parameter isSpecification="false" xmi.id="ukEh28rKLJ8q6" type="uEaN4zBesGS5X" visibility="private" name="group" value=""/>
          </UML:BehavioralFeature.parameter>
         </UML:Operation>
-        <UML:Operation isSpecification="false" isRoot="false" xmi.id="ui7USAFhH2g5H" isVirtual="false" isInline="false" isQuery="false" visibility="public" isOverride="false" isAbstract="false" name="getAccountabilitiesByTypeBeforeTime" isLeaf="false">
+        <UML:Operation isSpecification="false" isRoot="false" xmi.id="ui7USAFhH2g5H" isVirtual="false" isInline="false" isQuery="false" visibility="public" isOverride="false" isAbstract="false" name="getAccountabilitiesByType" isLeaf="false">
          <UML:BehavioralFeature.parameter>
           <UML:Parameter isSpecification="false" xmi.id="uTiGTpyBqcAHG" type="ugctdu0Mb1uQs" visibility="private" name="type" value=""/>
           <UML:Parameter isSpecification="false" xmi.id="uQJOPdmP9ttcY" type="ukVesZMS41tkC" visibility="private" name="time" value=""/>
@@ -598,7 +598,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings documentation="" uniqueid="uQJOPdmP9ttcY" viewid="u8Hr9wzTbIy1g"/>
+  <docsettings documentation="" uniqueid="u2YiM5Xkq6aoi" viewid="u8Hr9wzTbIy1g"/>
   <listview>
    <listitem id="Views" type="800" open="1">
     <listitem id="Entity_Relationship_Model" type="836" open="1"/>
