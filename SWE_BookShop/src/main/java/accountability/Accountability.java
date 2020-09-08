@@ -36,4 +36,8 @@ public class Accountability
     {
         return timeRecord;
     }
+
+    public AccountabilityType getType() {
+        return type;
+    }
 }

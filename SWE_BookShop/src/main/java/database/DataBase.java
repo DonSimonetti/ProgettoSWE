@@ -121,4 +121,35 @@ public class DataBase //TODO implement methods
         accountabilities.add(accountability);
         return accountability;
     }
+
+    /*
+    / se timeRecord è null ritorna tutte le accountabilities di quel tipo, altrimenti restituisce le accountabilities
+    / create nel timeRecord (e.g. gli utenti iscritti in un certo periodo)
+     */
+    public Vector<Accountability> getAccountabilitiesByType(AccountabilityType type){
+        Vector<Accountability> accountabilityVector=new Vector<Accountability>();
+        for (Accountability a: accountabilities)
+        {
+            if(a.getType()==type)
+            {
+                accountabilityVector.add(a);
+            }
+        }
+        return accountabilityVector;
+    }
+
+    public Vector<Accountability> getAccountabilitiesByType(AccountabilityType type, TimeRecord timeRecord){
+        Vector<Accountability> accountabilityVector=new Vector<Accountability>();
+        for (Accountability a: accountabilities)
+        {
+            if(a.getType()==type)
+            {
+                if(timeRecord.getStartTime() <= a.getTimeRecord().getStartTime() && a.getTimeRecord().getStartTime() <= timeRecord.getEndTime())
+                {
+                    accountabilityVector.add(a);
+                }
+            }
+        }
+        return accountabilityVector;
+    }
 }
