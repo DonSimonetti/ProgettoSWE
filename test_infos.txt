@@ -26,3 +26,6 @@ Nostri
 - "La divina commedia" ha un'edizione curata da Antonio Lanza pubblicata nel 1980
 - "De rerum natura", opera di Tito Lucrezio Caro, è stata tradotta per la prima volta da Alessandro Marchetti
 - Il lettore x raccomanda di leggere "Dialogo della Natura e di un Islandese" di Leopardi dopo aver letto "De rerum natura" di Lucrezio
+- "Introduzione agli algoritmi e strutture dati" è un manuale universitario scritto da Thomas Cormen, Charles Leiserson, Ronald Rivest e Clifford Stein, edita da "MIT Press"
+- "Introduzione agli algoritmi e strutture dati" ha un edizione italiana curata da Livio Colussi
+- Gli utenti "DonSimonetti" e "FSciamma" sono entrati nel gruppo "010" che commenta "Introduzione agli algoritmi e strutture dati"
