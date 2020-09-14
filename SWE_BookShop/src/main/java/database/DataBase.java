@@ -21,6 +21,8 @@ public final class DataBase //TODO implement methods
 
     private List<Accountability> accountabilities;
 
+    private List<BookList> catalog;
+
     private DataBase()
     {
         accountabilities=new Vector<Accountability>();
@@ -51,14 +53,53 @@ public final class DataBase //TODO implement methods
         }
     }
 
-    public void insertEdition(User user, String editor, int year)
+    public void insertEdition(User user, Opera opera, String editor, int year) throws Exception
     {
+        PartyType.ePartyTypes userType=user.getType().getType();
 
+        switch (userType)
+        {
+            case PUBLISHER: {
+
+                OperaEdition _operaEdition=new OperaEdition(opera, editor, year);
+
+                createAndRegisterAccountability(_operaEdition, new AccountabilityType(AccountabilityType.eAccountabilityTypes.EDITION), opera, null);
+            }
+            default: throw new Exception("'userType' is invalid or doesn't have sufficient permission");
+        }
     }
 
-    public void insertBooksRelation(User user, Opera book1, Opera book2)
+    public void insertBooksRelation(User user,String name, Opera ...book) //TODO review needed: should we implement a union find?
     {
+        PartyType.ePartyTypes userType = user.getType().getType();
 
+
+        boolean found = false;
+
+        switch (userType)
+        {
+            case MODERATOR: {
+                for (BookList tmp : catalog) {
+                    if (name.equals(tmp.getName()))
+                    {
+                        found = true;
+                        for (Opera i : book)
+                        {
+                            tmp.insertBook(i);
+                        }
+                        break;
+                    }
+                }
+                if(!found)
+                {
+                    Vector<Opera> bookList = new Vector<Opera>();
+                    for (Opera i: book) {
+                        bookList.add(i);
+                    }
+                    createNewBookList(user, name, bookList);
+                }
+            }
+        }
     }
 
     public void insertPendingComment(User user, String comment)
@@ -90,7 +131,16 @@ public final class DataBase //TODO implement methods
 
     public void createNewBookList(User user, String name, List<Opera> books)
     {
+        PartyType.ePartyTypes userType = user.getType().getType();
 
+        switch (userType)
+        {
+            case MODERATOR: {
+
+                BookList _bookList = new BookList(name, books);
+                catalog.add(_bookList);
+            }
+        }
     }
 
     public void signUserToGroup(User user, Group group)
