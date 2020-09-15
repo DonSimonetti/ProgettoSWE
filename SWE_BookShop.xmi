@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2020-09-14T15:42:36" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
+<XMI verified="false" xmi.version="1.2" timestamp="2020-09-15T11:29:11" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -220,6 +220,7 @@
         <UML:EnumerationLiteral visibility="public" isSpecification="false" namespace="uFZ5lYd6Jaial" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uhHSqoeSYrJNJ" name="COMMENTS"/>
         <UML:EnumerationLiteral visibility="public" isSpecification="false" namespace="uFZ5lYd6Jaial" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ua5vAhKOqgGeb" name="AUTHOR_OF"/>
         <UML:EnumerationLiteral visibility="public" isSpecification="false" namespace="uFZ5lYd6Jaial" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uOEG4uivVXOnT" name="ASSOCIATED_WITH"/>
+        <UML:EnumerationLiteral visibility="public" isSpecification="false" namespace="uFZ5lYd6Jaial" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="unaxakyEP9mjV" name="PROPOSES"/>
        </UML:Enumeration.literal>
       </UML:Enumeration>
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uclVMrjIk5P1e" name="Author">
@@ -328,8 +329,8 @@
         <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uQ7CKXfrBCaS5" isOverride="false" name="insertBooksRelation" isInline="false" isVirtual="false">
          <UML:BehavioralFeature.parameter>
           <UML:Parameter visibility="private" isSpecification="false" xmi.id="uS8XPSP3IMxJn" type="uWTy3gJNf3eLX" value="" name="user"/>
-          <UML:Parameter visibility="private" isSpecification="false" xmi.id="uLToNTFIuQWmG" type="utzmcseNzIkoQ" value="" name="book1"/>
-          <UML:Parameter visibility="private" isSpecification="false" xmi.id="uEa1ATIQbrT4S" type="utzmcseNzIkoQ" value="" name="book2"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="uYh7hG3uQjoYz" type="uR7i8yLwelWIy" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="uZTJxgo04hHup" type="uZlt5DQLwrr0p" value="" name="book"/>
          </UML:BehavioralFeature.parameter>
         </UML:Operation>
         <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u4s1UPEiMVdSL" isOverride="false" name="insertPendingComment" isInline="false" isVirtual="false">
@@ -348,13 +349,6 @@
          <UML:BehavioralFeature.parameter>
           <UML:Parameter visibility="private" isSpecification="false" xmi.id="u7gcFbOLnn4q0" type="uWTy3gJNf3eLX" value="" name="utente"/>
           <UML:Parameter visibility="private" isSpecification="false" xmi.id="udfYzvua1e8Cj" type="uE6mfUSa7puN2" value="" name="party"/>
-         </UML:BehavioralFeature.parameter>
-        </UML:Operation>
-        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uFRzN33zMtgit" isOverride="false" name="createNewBookList" isInline="false" isVirtual="false">
-         <UML:BehavioralFeature.parameter>
-          <UML:Parameter visibility="private" isSpecification="false" xmi.id="udaAzPKM45XOX" type="uWTy3gJNf3eLX" value="" name="user"/>
-          <UML:Parameter visibility="private" isSpecification="false" xmi.id="unwsPIPvt4zP7" type="uR7i8yLwelWIy" value="" name="name"/>
-          <UML:Parameter visibility="private" isSpecification="false" xmi.id="uTx5ZES4xdgC5" type="uh4tm7T9tkBfL" value="" name="books"/>
          </UML:BehavioralFeature.parameter>
         </UML:Operation>
         <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="utdrzF8FPAt3J" isOverride="false" name="signUserToGroup" isInline="false" isVirtual="false">
@@ -430,10 +424,11 @@
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uEE2HN5iS6KP5" name="Comment*"/>
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u6tPsuspl0xtC" name="Set"/>
       <UML:Dependency visibility="public" isSpecification="false" namespace="Logical_View" supplier="uxThbcgCJnX8B" xmi.id="uEU6WqtZVUcF0" client="uGRYHcSN7GU11" name=""/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uZlt5DQLwrr0p" name="Opera ..."/>
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="101">
-       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="diagramma delle classi" font="Noto Sans,9,-1,5,50,0,0,0,0,0" canvasheight="916.484" canvaswidth="1815.95" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="123,7545360525225" xmi.id="u8Hr9wzTbIy1g" documentation="" showscope="1" snapgrid="0" showatts="1" type="1">
+       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="diagramma delle classi" font="Noto Sans,9,-1,5,50,0,0,0,0,0" canvasheight="916.484" canvaswidth="1815.95" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="81,37061629162326" xmi.id="u8Hr9wzTbIy1g" documentation="" showscope="1" snapgrid="0" showatts="1" type="1">
         <widgets>
          <classwidget linecolor="#ff0000" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" showoperations="1" usesdiagramusefillcolor="0" showpubliconly="0" showpackage="1" x="-781.289" showattsigs="601" showstereotype="1" y="-567.542" showattributes="1" font="Noto Sans,9,-1,5,50,0,0,0,0,0" localid="uNJ610kyeYqWC" width="166.916" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="uUGf0kXKe3CiX" autoresize="0" showscope="1" height="56.4579" showopsigs="601"/>
          <classwidget linecolor="#ff0000" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" showoperations="1" usesdiagramusefillcolor="0" showpubliconly="0" showpackage="1" x="-939.33" showattsigs="601" showstereotype="1" y="-478.416" showattributes="1" font="Noto Sans,9,-1,5,50,0,0,0,0,0" localid="uqin5njAGEHNA" width="149" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="uE6mfUSa7puN2" autoresize="1" showscope="1" height="54" showopsigs="601"/>
@@ -598,7 +593,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="u8Hr9wzTbIy1g" uniqueid="uUZ64QEHZCnyP" documentation=""/>
+  <docsettings viewid="u8Hr9wzTbIy1g" uniqueid="uYh7hG3uQjoYz" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component_View"/>
@@ -642,7 +637,6 @@
      <listitem open="1" type="813" id="uEE2HN5iS6KP5"/>
      <listitem open="1" type="813" id="uGRYHcSN7GU11">
       <listitem open="0" type="814" id="uAi0kE97n75PN"/>
-      <listitem open="0" type="815" id="uFRzN33zMtgit"/>
       <listitem open="0" type="815" id="ui7USAFhH2g5H"/>
       <listitem open="0" type="815" id="uQ7CKXfrBCaS5"/>
       <listitem open="0" type="815" id="us5I8RL6rlw7Z"/>
@@ -692,12 +686,13 @@
       <listitem open="0" type="829" id="uxMbQ2FexcUZd"/>
      </listitem>
      <listitem open="0" type="807" id="u8Hr9wzTbIy1g" label="diagramma delle classi"/>
-     <listitem open="0" type="831" id="uFZ5lYd6Jaial">
+     <listitem open="1" type="831" id="uFZ5lYd6Jaial">
       <listitem open="0" type="839" id="uOEG4uivVXOnT"/>
       <listitem open="0" type="839" id="ua5vAhKOqgGeb"/>
       <listitem open="0" type="839" id="uhHSqoeSYrJNJ"/>
       <listitem open="0" type="839" id="ugAS5YowV4Z8P"/>
       <listitem open="0" type="839" id="uE5ZINM259BK9"/>
+      <listitem open="0" type="839" id="unaxakyEP9mjV"/>
       <listitem open="0" type="839" id="ufqnsJ3zaz63A"/>
      </listitem>
      <listitem open="1" type="831" id="uyrnrL1yc8Sj4">
@@ -727,6 +722,7 @@
       <listitem open="0" type="814" id="uXYujeQty7JAl"/>
       <listitem open="0" type="814" id="uYVlGfFubQfz4"/>
      </listitem>
+     <listitem open="1" type="813" id="uZlt5DQLwrr0p"/>
      <listitem open="0" type="813" id="u3PM7fjsNYBFW">
       <listitem open="0" type="814" id="u6haDlubzSkWv"/>
       <listitem open="0" type="815" id="uzTpy9rWUKkOX"/>
