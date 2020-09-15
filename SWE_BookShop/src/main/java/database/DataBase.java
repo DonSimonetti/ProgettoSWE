@@ -6,6 +6,7 @@ import main.java.accountability.AccountabilityType;
 import main.java.parties.*;
 
 import java.sql.Time;
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -20,8 +21,6 @@ public final class DataBase //TODO implement methods
     private static DataBase instance=null;
 
     private List<Accountability> accountabilities;
-
-    private List<BookList> catalog;
 
     private DataBase()
     {
@@ -69,37 +68,23 @@ public final class DataBase //TODO implement methods
         }
     }
 
-    public void insertBooksRelation(User user,String name, Opera ...book) //TODO review needed: should we implement a union find?
+    public void insertBooksRelation(User user, String name, Opera ...book)
     {
-        PartyType.ePartyTypes userType = user.getType().getType();
-
-
-        boolean found = false;
+        PartyType.ePartyType userType = user.getType().getType();
 
         switch (userType)
         {
-            case MODERATOR: {
-                for (BookList tmp : catalog) {
-                    if (name.equals(tmp.getName()))
-                    {
-                        found = true;
-                        for (Opera i : book)
-                        {
-                            tmp.insertBook(i);
-                        }
-                        break;
-                    }
-                }
-                if(!found)
-                {
-                    Vector<Opera> bookList = new Vector<Opera>();
-                    for (Opera i: book) {
-                        bookList.add(i);
-                    }
-                    createNewBookList(user, name, bookList);
-                }
-            }
+            case MODERATOR, USER:
+                Vector<Opera> _vector = new Vector<Opera>();
+                Collections.addAll(_vector, book);
+                BookList _bookList = new BookList(name, _vector);
+
+                TimeRecord timeRec=new TimeRecord(new Time(System.currentTimeMillis()),null);
+
+                createAndRegisterAccountability(user, new AccountabilityType(AccountabilityType.eAccountabilityTypes.PROPOSES), _bookList, timeRec);
+
         }
+
     }
 
     public void insertPendingComment(User user, String comment)
@@ -127,20 +112,6 @@ public final class DataBase //TODO implement methods
     {
         //TODO Add some checks?
         createAndRegisterAccountability(user,new AccountabilityType(AccountabilityType.eAccountabilityTypes.RECOMMENDS),party,null);
-    }
-
-    public void createNewBookList(User user, String name, List<Opera> books)
-    {
-        PartyType.ePartyTypes userType = user.getType().getType();
-
-        switch (userType)
-        {
-            case MODERATOR: {
-
-                BookList _bookList = new BookList(name, books);
-                catalog.add(_bookList);
-            }
-        }
     }
 
     public void signUserToGroup(User user, Group group)
