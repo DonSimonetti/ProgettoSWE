@@ -70,7 +70,7 @@ public final class DataBase //TODO implement methods
 
     public void insertBooksRelation(User user, String name, Opera ...book)
     {
-        PartyType.ePartyType userType = user.getType().getType();
+        PartyType.ePartyTypes userType = user.getType().getType();
 
         switch (userType)
         {
