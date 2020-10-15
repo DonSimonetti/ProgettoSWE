@@ -6,6 +6,7 @@ import main.java.accountability.AccountabilityType;
 import main.java.parties.*;
 
 import java.sql.Time;
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -58,18 +59,23 @@ public final class DataBase
         }
     }
 
-    public void insertBooksRelation(User user, Opera book1, Opera book2)
+    public void insertBooksRelation(User user, String name, Opera ... book)
     {
-        try
-        {
-            checkWritingPermissions(user);
+        PartyType.ePartyTypes userType = user.getType().getType();
 
-            createAndRegisterAccountability(book1,new AccountabilityType(AccountabilityType.eAccountabilityTypes.ASSOCIATED_WITH),book2,null);
-        }
-        catch (Exception e)
+        switch (userType)
         {
-            System.out.println(e.toString());
+            case MODERATOR, USER:
+                Vector<Opera> _vector = new Vector<Opera>();
+                Collections.addAll(_vector, book);
+                BookList _bookList = new BookList(name, _vector);
+
+                TimeRecord timeRec=new TimeRecord(new Time(System.currentTimeMillis()),null);
+
+                createAndRegisterAccountability(user, new AccountabilityType(AccountabilityType.eAccountabilityTypes.PROPOSES), _bookList, timeRec);
+
         }
+
     }
 
     public void insertPendingComment(User user, String comment)
