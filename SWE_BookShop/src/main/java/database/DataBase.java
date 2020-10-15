@@ -15,7 +15,7 @@ import java.util.Vector;
 *
 * */
 
-public final class DataBase //TODO implement methods
+public final class DataBase
 {
     private static DataBase instance=null;
 
@@ -34,31 +34,51 @@ public final class DataBase //TODO implement methods
         return instance;
     }
 
-    public void insertOpera(User publisher, String title, String authorName,int yearFirstPublication) throws Exception
+    public void insertOpera(User publisher, String title, String authorName,int yearFirstPublication)
     {
-        PartyType.ePartyTypes userType=publisher.getType().getType();
-
-        switch (userType)
+        try
         {
-            case PUBLISHER: {//PUBLISHER or someone else who have writing permissions TODO
+            checkWritingPermissions(publisher);
 
-                Opera opera=new Opera(title,yearFirstPublication);
-                Author author=new Author(authorName);
+            Opera opera=new Opera(title,yearFirstPublication);
+            Author author=new Author(authorName);
 
-                createAndRegisterAccountability(author, new AccountabilityType(AccountabilityType.eAccountabilityTypes.AUTHOR_OF), opera,null);
-            }
-            default: throw new Exception("'userType' is invalid or doesn't have sufficient permission");
+            createAndRegisterAccountability(author, new AccountabilityType(AccountabilityType.eAccountabilityTypes.AUTHOR_OF), opera,null);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
         }
     }
 
-    public void insertEdition(User user, String editor, int year)
+    public void insertEdition(User user, Opera opera, String editor, int year)
     {
+        try
+        {
+            checkWritingPermissions(user);
 
+            OperaEdition operaEdition=new OperaEdition(opera,editor,year);
+
+            createAndRegisterAccountability(operaEdition,new AccountabilityType(AccountabilityType.eAccountabilityTypes.EDITION),opera,null);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
     }
 
     public void insertBooksRelation(User user, Opera book1, Opera book2)
     {
+        try
+        {
+            checkWritingPermissions(user);
 
+            createAndRegisterAccountability(book1,new AccountabilityType(AccountabilityType.eAccountabilityTypes.ASSOCIATED_WITH),book2,null);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
     }
 
     public void insertPendingComment(User user, String comment)
@@ -88,7 +108,7 @@ public final class DataBase //TODO implement methods
         createAndRegisterAccountability(user,new AccountabilityType(AccountabilityType.eAccountabilityTypes.RECOMMENDS),party,null);
     }
 
-    public void createNewBookList(User user, String name, List<Opera> books)
+    public void createNewBookList(User user, String name, List<Opera> books) //TODO implement
     {
 
     }
@@ -151,5 +171,15 @@ public final class DataBase //TODO implement methods
             }
         }
         return accountabilityVector;
+    }
+
+    //Private methods
+
+    private static void checkWritingPermissions(User user) throws Exception
+    {
+        PartyType.ePartyTypes userType=user.getType().getType();
+
+        if(!(userType== PartyType.ePartyTypes.PUBLISHER))//PUBLISHER or someone else who have writing permissions TODO
+            throw new Exception("'userType' is invalid or doesn't have sufficient permission");
     }
 }
