@@ -9,7 +9,8 @@ public class AccountabilityType
         EDITION,
         COMMENTS,
         AUTHOR_OF,
-        ASSOCIATED_WITH
+        ASSOCIATED_WITH,
+        PROPOSES
     }
 
     private eAccountabilityTypes type;
