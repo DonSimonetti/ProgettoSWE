@@ -27,23 +27,27 @@ public class ObjectModelTest
 
             dataBase.insertOpera(me,"Le cosmicomiche","Italo Calvino", 1965);
 
-            Author author=new Author("_null_");
+            String authorName = null;
             Vector<Accountability> authors = dataBase.getAccountabilitiesByType(AccountabilityType.eAccountabilityTypes.AUTHOR_OF);
             for(Accountability a : authors)
             {
                 if(a.getSecondary() instanceof Opera)
                 {
                     Opera opera = (Opera) a.getSecondary();
-                    if (opera.getTitle() == "Barone Rampante") {
-                        author = (Author) a.getPrimary();
+                    if (opera.getTitle() == "Barone Rampante")
+                    {
+                        authorName = ((Author) a.getPrimary()).getName();
                         break;
                     }
                 }
             }
-            if (author.getName()!="_null_")
-                dataBase.insertOpera(me,"L'Orlando furioso raccontato da Italo Calvino",author.getName(),1970);
+            if(authorName!=null)
+                dataBase.insertOpera(me,"L'Orlando furioso raccontato da Italo Calvino",authorName,1970);
+
+            dataBase.insertOpera(me,"Orlando furioso","Torquato Tasso",1516);//Tasso non ha scritto l'orlando furioso. (???)
 
 
+            //.....
         }
         catch (Exception e)
         {
