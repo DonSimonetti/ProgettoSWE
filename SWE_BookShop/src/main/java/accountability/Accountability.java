@@ -19,7 +19,8 @@ public class Accountability
         this.primary=new Party(primary.getType().getType());
         this.type=new AccountabilityType(type.getType());
         this.secondary=new Party(secondary.getType().getType());
-        this.timeRecord=new TimeRecord(timeRecord.getStartTime(),timeRecord.getEndTime());
+        if(timeRecord!=null)
+            this.timeRecord=new TimeRecord(timeRecord.getStartTime(),timeRecord.getEndTime());
     }
 
     public Party getPrimary()
