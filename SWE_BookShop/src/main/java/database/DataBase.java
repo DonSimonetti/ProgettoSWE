@@ -17,16 +17,7 @@ import java.util.Vector;
 
 public final class DataBase
 {
-    private static DataBase instance=null;
-
-    private List<Accountability> accountabilities;
-
-    private DataBase()
-    {
-        accountabilities=new Vector<Accountability>();
-    }
-
-    public DataBase getInstance()
+    public static DataBase getInstance()
     {
         if(instance==null)
             instance=new DataBase();
@@ -174,6 +165,15 @@ public final class DataBase
     }
 
     //Private methods
+
+    private static DataBase instance=null;
+
+    private List<Accountability> accountabilities;
+
+    private DataBase()
+    {
+        accountabilities=new Vector<Accountability>();
+    }
 
     private static void checkWritingPermissions(User user) throws Exception
     {

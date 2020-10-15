@@ -8,10 +8,13 @@ package main.java.parties;
 
 public class User extends Party
 {
-    String name;
-    public User(String name)
+    public User(String name, PartyType.ePartyTypes userType) throws Exception
     {
-        super(PartyType.ePartyTypes.USER);
+        super(userType);
+
+        if(!(userType== PartyType.ePartyTypes.USER || userType== PartyType.ePartyTypes.PUBLISHER || userType== PartyType.ePartyTypes.MODERATOR))
+            throw new Exception("Invalid 'userType' parameter for User");
+
         this.name=name;
     }
 
@@ -19,4 +22,6 @@ public class User extends Party
     {
         return name;
     }
+
+    private String name;
 }
