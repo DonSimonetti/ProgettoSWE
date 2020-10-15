@@ -149,6 +149,18 @@ public final class DataBase
         return accountabilityVector;
     }
 
+    public Vector<Accountability> getAccountabilitiesByType(AccountabilityType.eAccountabilityTypes type){
+        Vector<Accountability> accountabilityVector=new Vector<Accountability>();
+        for (Accountability a: accountabilities)
+        {
+            if(a.getType().getType()==type)
+            {
+                accountabilityVector.add(a);
+            }
+        }
+        return accountabilityVector;
+    }
+
     public Vector<Accountability> getAccountabilitiesByType(AccountabilityType type, TimeRecord timeRecord){
         Vector<Accountability> accountabilityVector=new Vector<Accountability>();
         for (Accountability a: accountabilities)
